@@ -33,25 +33,29 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Digital Privacy Protection Example'),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              ElevatedButton(
-                onPressed: () async {
-                  bool result = await _noScreenshot.screenshotOff();
-                  debugPrint('Screenshot Off: $result');
-                },
-                child: const Text('Disable Screenshot'),
-              ),
-              ElevatedButton(
-                onPressed: () async {
-                  bool result = await _noScreenshot.screenshotOn();
-                  debugPrint('Enable Screenshot: $result');
-                },
-                child: const Text('Enable Screenshot'),
-              ),
-              const SizedBox(height: 20),
-            ],
+          child: ListView(
+            children:[ Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                ElevatedButton(
+                  onPressed: () async {
+                    bool result = await _noScreenshot.screenshotOff();
+                    debugPrint('Screenshot Off: $result');
+                  },
+                  child: const Text('Disable Screenshot'),
+                ),
+                ElevatedButton(
+                  onPressed: () async {
+                    bool result = await _noScreenshot.screenshotOn();
+                    debugPrint('Enable Screenshot: $result');
+                  },
+                  child: const Text('Enable Screenshot'),
+                ),
+                const SizedBox(height: 20),
+                Image.asset("assets/1.jpg"),
+              ],
+              
+            ),]
           ),
         ),
       ),
